@@ -1,0 +1,25 @@
+[
+  {
+    "PropertyGroupId": "kinesis.analytics.flink.run.options",
+    "PropertyMap": {
+      "python": "RealTimeFraudPrevention/RTFP.py",
+      "jarfile": "RealTimeFraudPrevention/lib/flink-sql-connector-kinesis_2.12-1.13.2.jar"
+    }
+  },
+  {
+    "PropertyGroupId": "consumer.config.0",
+    "PropertyMap": {
+      "input.stream.name": "transaction-stream",
+      "flink.stream.initpos": "LATEST",
+      "aws.region": "eu-west-1"
+    }
+  },
+  {
+    "PropertyGroupId": "producer.config.0",
+    "PropertyMap": {
+      "output.stream.name": "processed_transaction-stream",
+      "shard.count": "1",
+      "aws.region": "eu-west-1"
+    }
+  }
+]
